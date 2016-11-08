@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -51,7 +50,7 @@ public class Game extends AppCompatActivity {
     public static final String SAVE_STATE = "svaeste";
     public static final String NEW_GAME_BOOL = "new_game";
     SharedPreferences.Editor editor;
-    public int lastKnown;
+    public static int lastKnown;
     int currLVL;
     int curr2048;
     boolean notify1;
@@ -202,12 +201,11 @@ public class Game extends AppCompatActivity {
         lastKnown = prefs.getInt(LAST_KNOWN,1);
     }
 
-//    public static void addLastKnown(int lvl){
-//        if (lvl>lastKnown){
-//            analytics.createBundle().put("value",Integer.toString(lastKnown)).logEvent("Update_last_known");
-//            lastKnown=lvl;
-//        }
-//    }
+    public static void addLastKnown(int lvl){
+        if (lvl>lastKnown){
+            lastKnown=lvl;
+        }
+    }
 
 
     private void loadHighScore() {

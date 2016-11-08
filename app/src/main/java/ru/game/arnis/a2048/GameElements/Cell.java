@@ -23,7 +23,7 @@ public class Cell {
     }
 
     public void updateView(){
-//        Game.addLastKnown(lvl);
+        Game.addLastKnown(lvl);
         switch (lvl){
             case 1: this.getLook().setBackgroundResource(ru.game.arnis.a2048.R.drawable.kop10);break;//10kop
             case 2: this.getLook().setBackgroundResource(ru.game.arnis.a2048.R.drawable.kop50);break;//50kop+++
